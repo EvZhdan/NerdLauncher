@@ -1,0 +1,29 @@
+import java.util.Random;
+
+
+public class Pussy implements Runnable {
+	
+	int time;
+	String name;
+	Random r = new Random();
+
+	public Pussy(String name){
+		this.name = name;
+		time = r.nextInt(999);
+	}
+
+	public void run() {
+			
+		System.out.printf("Поток %s спит %d\n", name,time);
+		
+		try {
+			Thread.sleep(time);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.printf("Поток %s проснулся и закончился", name);
+		
+	}
+
+}

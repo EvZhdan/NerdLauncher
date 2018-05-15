@@ -1,0 +1,37 @@
+
+public class TestThreads implements Runnable {
+	private static a = new Accum();
+	
+
+	public static void main(String[] args){
+		ThreadOne t1 = new ThreadOne();
+		ThreadTwo t2 = new ThreadTwo();
+		
+		Thread one = new Thread(t1);
+		Thread two = new Thread(t2);
+		
+		one.start();
+		two.start();
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+
+
+class Accum{
+	
+}
+
+class ThreadOne {
+	
+	System.out.prinln();//("один" + a.getCount());
+}
+
+class ThreadTwo{
+	
+}
+

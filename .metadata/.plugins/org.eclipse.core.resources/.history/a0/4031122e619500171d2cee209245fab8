@@ -1,0 +1,12 @@
+import java.util.*;
+
+public class Song {
+	public static void main(String[] args){
+		Map coll = new HashMap();
+		coll.put("1","Шабалов");
+		coll.put("2","Свингеры");
+		coll.put("3","БДСМ");
+
+		System.out.println(coll.get("2"));		
+	}
+}

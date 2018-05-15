@@ -1,0 +1,49 @@
+import java.util.*;
+import java.io.*;
+
+public class JukeBox {
+
+		ArrayList<Song> songList = new ArrayList<Song>();//Буде хранить названия песен в списке 
+		
+		public static void main(String[] args){
+			new JukeBox().go();
+		}
+		
+		class ArtistCompare implements Comparator<Song>{
+
+			public int compare(Song one, Song two) {
+			public int compare (Song one, Song two){
+			return one.getArtist().compareTo(two.getArtist());
+				}
+				
+			}
+			
+		}
+		
+		public void go(){	//загружаем файл и выводим содержимое songList(ArrayList)
+			getSongs();
+			System.out.println(songList);
+			Collections.sort(songList);
+			
+			ArtistCompare artistCompare = new ArtistCompare();
+			Collection.sort(songList, artistCimpare);
+			
+			System.out.println(songList);
+		}
+		void getSongs(){
+			try{
+				File file = new File("SongList.txt");
+				BufferedReader reader = new BufferedReader(new FileReader(file));
+				String line=null;
+				while((line=reader.readLine()) != null){
+					addSong(line);
+				}
+			}catch(Exception ex){ ex.printStackTrace(); }
+		}
+			
+			void addSong(String lineToParse){
+				String[] tokens = lineToParse.split("/");
+				songList.add(tokens[0]);
+			}
+		}
+
